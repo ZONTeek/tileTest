@@ -1,7 +1,7 @@
 import React from "react";
 import "./TileStyle.css";
 
-const closedTileColor = (status, color) => {
+const closedTileColor = (status) => {
   if (status === "active")
     return "tile";
   else if (status === "chosen")
@@ -10,11 +10,11 @@ const closedTileColor = (status, color) => {
 }
 
 
-const Tile = ({ props, setSelectedTile }) => {
+const Tile = ({ props, selectTile }) => {
   return <figure
-    className={closedTileColor(props.status, props.color)}
+    className={closedTileColor(props.status)}
     style={props.status === "chosen" ? { backgroundColor: props.color } : null}
-    onClick={() => { if (props.status !== "disabled") setSelectedTile(props.id, props.color) }}
+    onClick={() => { if (props.status !== "disabled") selectTile(props.id) }}
   />
 }
 
