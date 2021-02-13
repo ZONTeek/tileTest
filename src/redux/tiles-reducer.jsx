@@ -65,7 +65,7 @@ const tilesReducer = (state = stateInit, action) => {
       return { ...state, AllRoundTiles: AllRoundTiles, currentTiles: AllRoundTiles[0] }
     }
     case NEXT_ROUND: {
-      if (state.currentRound < 10) return {
+      if (state.currentRound < 3) return {
         ...state,
         currentRound: state.currentRound + 1,
         currentTiles: state.AllRoundTiles[state.currentRound + 1],
